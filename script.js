@@ -1,3 +1,5 @@
+import {hockeyPlayer} from './data/HockeyPlayers.js';
+
 // DOM list
 const sectionList = document.getElementById('sectionList')
 const sectionNew = document.getElementById('sectionNew')
@@ -23,16 +25,6 @@ const submitEditButton = document.getElementById('submitEditButton')
 const baseApi = 'https://hockeyplayers.systementor.se/gong/player'
 
 
-// object
-class hockeyPlayer{
-    constructor(id,namn,jersey,age,born){
-        this.id = id;
-        this.namn = namn;
-        this.jersey = jersey;
-        this.age = age;
-        this.born = born
-    }
-}
 
 // search function
 const search = document.getElementById('search');
@@ -176,7 +168,7 @@ function refreshItems(){
             //json -> items
             console.log(array)
             array.forEach(player=>{
-                p = new hockeyPlayer(player.id,
+            const p = new hockeyPlayer(player.id,
                     player.namn,
                     player.jersey,
                     player.age,
