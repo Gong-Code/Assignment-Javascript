@@ -1,3 +1,5 @@
+// export = public
+// class hockeyPlayer = object
 export class hockeyPlayer{
     constructor(id,namn,jersey,age,born){
         this.id = id;

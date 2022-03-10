@@ -133,7 +133,7 @@ submitEditButton.addEventListener("click",()=>{
 
 let editingPlayer = null;
 
-
+// find player id to edit
 function editPlayer(id){
     editingPlayer = items.find((item)=>item.id == id)
     editName.value = editingPlayer.namn;
@@ -144,7 +144,7 @@ function editPlayer(id){
 }
 
 
-
+// display obeject in the column and row
 function renderTr(player){
     let jsCall = `editPlayer(${player.id})`;
     let template = `<tr>
@@ -154,10 +154,10 @@ function renderTr(player){
                         <td>${player.born}</td>
                         <td><a href="#" onclick="${jsCall}">EDIT</td>
                     </tr>`
-    playerTableBody.innerHTML = playerTableBody.innerHTML + template;
+    playerTableBody.innerHTML = playerTableBody.innerHTML + template; // the element property 'innerHTML' gets or sets HTML markup contained within the element.
 } 
 
-
+// update table list
 function refreshItems(){
     items = [];
     playerTableBody.innerHTML = '';
